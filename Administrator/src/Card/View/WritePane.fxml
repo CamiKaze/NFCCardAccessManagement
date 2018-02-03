@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Card.Control.WritePaneController">
+    <TextField fx:id="TFName" promptText="Name">
+      <VBox.margin>
+        <Insets left="10.0" right="10.0" top="20.0" />
+      </VBox.margin>
+      <font>
+         <Font name="System Bold Italic" size="15.0" />
+      </font>
+    </TextField>
+    <TextField fx:id="TFSurname" promptText="Surname">
+      <VBox.margin>
+        <Insets left="10.0" right="10.0" top="5.0" />
+      </VBox.margin>
+      <font>
+         <Font name="System Bold Italic" size="15.0" />
+      </font>
+    </TextField>
+    <TextField fx:id="TFIDNum" promptText="Contact Number">
+      <VBox.margin>
+        <Insets left="10.0" right="10.0" top="5.0" />
+      </VBox.margin>
+      <font>
+         <Font name="System Bold Italic" size="15.0" />
+      </font>
+    </TextField>
+   <HBox spacing="10.0">
+      <VBox.margin>
+         <Insets left="10.0" right="10.0" top="5.0" />
+      </VBox.margin>
+      <children>
+         <TextField fx:id="TFLoadFunds" promptText="Load Funds">
+            <font>
+               <Font name="System Bold Italic" size="15.0" />
+            </font>
+         </TextField>
+         <CheckBox fx:id="ChkVIP" mnemonicParsing="false" text="VIP">
+            <HBox.margin>
+               <Insets top="6.0" />
+            </HBox.margin>
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </CheckBox>
+        <Button fx:id="BtnWrite" mnemonicParsing="false" onAction="#BtnWrite" text="Write Card">
+            <HBox.margin>
+               <Insets top="3.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+   </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <ImageView fx:id="ProPic" fitHeight="100.0" fitWidth="160.0" onMouseClicked="#HandleActions" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+            <image>
+               <Image url="@../nopic.png" />
+            </image></ImageView>
+         <ImageView fx:id="ProPic11" fitHeight="100.0" fitWidth="160.0" onMouseClicked="#HandleActions" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../FingerPrint.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="ProPic1" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#HandleActions" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../TagCard.png" />
+            </image>
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </ImageView>
+      </children>
+      <VBox.margin>
+         <Insets left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+   </HBox>
+   <HBox alignment="TOP_RIGHT" spacing="10.0">
+      <children>
+         <Button fx:id="BtnRead" mnemonicParsing="false" onAction="#BtnRead" text="Start Camera" />
+        <ComboBox fx:id="CmbPeriod" onAction="#CmbPeriod" promptText="Download Report" visibleRowCount="4">
+        	<items>
+        		<FXCollections fx:factory="observableArrayList">
+        			<String fx:value="" />
+        			<String fx:value="3 Months" />
+        			<String fx:value="6 Months" />
+        			<String fx:value="12 Months" />
+        		</FXCollections>
+        	</items>
+        </ComboBox>
+        <Button fx:id="BtnClear" mnemonicParsing="false" onAction="#BtnClear" text="Clear Details">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Button>
+      </children>
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+   </HBox>
+</VBox>
